@@ -6,45 +6,11 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 22:27:24 by kweihman          #+#    #+#             */
-/*   Updated: 2024/09/30 23:34:21 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/01 14:33:37 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/header.h"
-
-int is_map_valid(char **map)
-{
-	int line_length;
-	int row_nbr;
-	bool p_found;
-	bool e_found;
-	bool c_found;
-
-	if (map == NULL)
-		return (0);
-	row_nbr = 0;
-	p_found = false;
-	e_found = false;
-	c_found = false;
-	while (*map)
-	{
-		if (*map == NULL)
-			return (0);
-		line_length = ft_strlen(*map);
-		while (**map)
-		{
-			if (ft_strlen(*map) != line_length)
-				return (0);
-
-			if (**map != '1' && **map != '0' && **map != 'P' && **map != 'E')
-				return (0);
-			(*map)++;
-		}
-		row_nbr++;
-		map++;
-	}
-}
-
 
 bool is_map_valid(char **map)
 {
@@ -57,4 +23,9 @@ bool is_map_valid(char **map)
 		return (false);
 	if (f_is_2da_rctngl(map) == false)
 		return (false);
+	if (f_is_2da_surrounded(map, '1') == false)
+		return (false);
+	if (f_has_valid_path(map) == false)
+		return (false);
+	return (true);
 }
