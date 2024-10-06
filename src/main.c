@@ -6,33 +6,28 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:34:08 by kweihman          #+#    #+#             */
-/*   Updated: 2024/09/30 23:34:24 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/06 21:44:16 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "so_long.h"
+
 int main(int argc, char **argv)
 {
-	char	*map_name;
-	int		map_fd;
-	char*	map_string;
-	char	**map;
+	t_game	game;
 
-	if (argc > 2)
+	if (f_load_map(&game, map_name) == -1)
 		ERROR;
-	if (argc == 2)
-		map_name = argv[1];
-	else
-		map_name = "default_map.ber";
-	map_fd = open(map_name, O_RDONLY); // Need to check for errors
-	map_string = f_readfile(map_fd);
-	close(map_fd);
-	if (map_string == NULL) // I could save this step if split accepted NULL
+	if (f_is_map_valid(game.map) == false)
 		ERROR;
-	map = ft_split(map_string, '\n');
-	if (map == NULL)
-		ERROR;
+	game.mlx_ptr = mlx_init();   
+    game.win_ptr = mlx_new_window(game.mlx_ptr, SPRITE_WIDTH * map_linelength,
+	 SPRITE_HEIGHT * map_rownbr, "So Long");
 	
-	CHECK MAP;
+    mlx_loop(game.mlx_ptr);
+
+
+	FIRST GRAPHISCS OR FIRST INPUT HANDLING ?;
 	GAME starts;
 	return (0);
 }

@@ -1,14 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   f_load_images.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 17:54:37 by kweihman          #+#    #+#             */
-/*   Updated: 2024/09/30 17:54:50 by kweihman         ###   ########.fr       */
+/*   Created: 2024/10/03 16:17:38 by kweihman          #+#    #+#             */
+/*   Updated: 2024/10/03 16:26:04 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>      // For open() and O_* constants
-#include <unistd.h>     // For read() and close()
+#include "so_long.h"
+
