@@ -1,0 +1,9 @@
+[submodule "lib/FLib"]
+	path = lib/FLib
+	url = https://github.com/Canteen43/FLib.git
+[submodule "lib/Libft"]
+	path = lib/Libft
+	url = https://github.com/Canteen43/Libft.git
+[submodule "lib/minilibx-linux"]
+	path = lib/minilibx-linux
+	url = https://github.com/42Paris/minilibx-linux.git
