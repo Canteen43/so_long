@@ -25,7 +25,7 @@ SYSLIBFLAGS +=	-lX11
 
 # My libraries
 LIB1DIR =	Libft/
-LIB2DIR =	Flib/
+LIB2DIR =	FLib/
 LIB3DIR =	minilibx-linux/
 LIB1 = libft.a
 LIB2 = flib.a
