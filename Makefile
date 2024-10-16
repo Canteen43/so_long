@@ -30,8 +30,8 @@ LIB3DIR =	minilibx-linux/
 LIB1 = libft.a
 LIB2 = flib.a
 LIB3 = libmlx_Linux.a
-MYLIBS +=	$(LIB_DIR)$(LIB1DIR)$(LIB1)
 MYLIBS +=	$(LIB_DIR)$(LIB2DIR)$(LIB2)
+MYLIBS +=	$(LIB_DIR)$(LIB1DIR)$(LIB1)
 MYLIBS +=	$(LIB_DIR)$(LIB3DIR)$(LIB3)
 
 # Source files
