@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 23:07:55 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/16 07:57:20 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/17 08:14:54 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,24 @@
 int f_nbr_giv_char_2da(char **tda, char c)
 {
 	int count;
+	int row;
+	int col;
 
 	if (tda == NULL)
 		return (0);
 	count = 0;
-	while (*tda)
+	row = 0;
+	col = 0;
+	while (tda[row])
 	{
-		while (**tda)
+		while (tda[row][col])
 		{
-			if (**tda == c)
+			if (tda[row][col] == c)
 				count++;
-			(*tda)++;
+			col++;
 		}
-		tda++;
+		row++;
+		col = 0;
 	}
 	return (count);
 }
-/*WIP: The function somehow fails here.*/

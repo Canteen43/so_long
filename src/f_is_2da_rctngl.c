@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 23:29:37 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/14 11:02:59 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/17 08:18:25 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,18 @@ size_t	ft_strlen(const char *s);
 Returns false otherwise.*/
 bool f_is_2da_rctngl(char **tda)
 {
-	size_t line_length;
+	size_t	line_length;
+	int		row;
 
 	if (tda == NULL)
 		return (false);
-	line_length = ft_strlen(*tda);
-	while (*tda)
+	row = 0;
+	line_length = ft_strlen(tda[0]);
+	while (tda[row])
 	{
-		if (ft_strlen(*tda) != line_length)
+		if (ft_strlen(tda[row]) != line_length)
 			return (false);
-		tda++;
+		row++;
 	}
 	return (true);
 }
