@@ -6,23 +6,28 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:26:41 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/14 10:59:08 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/18 18:45:25 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
+// From Libft
+char	*ft_strchr(const char *s, int c);
+
+/*Performs what I think is a floodfill of the map. It starts at a given
+position (in my program exit). Then it edits the field and also calls itself
+for all adjacent fields. It stops when it encounter fields that don't need work.
+*/
 void f_floodfill(char **map, int row, int pos)
 {
-	if (map[row][pos] == 'O')
+	if (ft_strchr("O1SK", map[row][pos]))
 		return ;
-	if (map[row][pos] == '1')
-		return ;
-	if (map[row][pos] == 'P')
+	else if (map[row][pos] == 'P')
 		map[row][pos] = 'S';
-	if (map[row][pos] == '0')
+	else if (map[row][pos] == '0')
 		map[row][pos] = 'O';
-	if (map[row][pos] == 'C')
+	else if (map[row][pos] == 'C')
 		map[row][pos] = 'K';
 	f_floodfill(map, row, pos + 1);
 	f_floodfill(map, row, pos - 1);
