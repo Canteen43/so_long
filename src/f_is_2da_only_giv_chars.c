@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 23:15:23 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/17 08:11:57 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/18 18:08:38 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ bool f_is_2da_only_giv_chars(char **tda, char *giv_chars)
 	int	j;
 	
 	i = 0;
+	j = 0;
 	if (tda == NULL)
 		return (false);
 	while (tda[i])
