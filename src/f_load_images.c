@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:17:38 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/19 09:59:33 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/19 10:03:05 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ char	*ft_strjoin(char const *s1, char const *s2);
 /*Helper function for f_load_images. Loads an image from a file and saves its
 pointer to the image pointer passed as argument. Returns 0 on success and -1
 on failure.*/
-static int f_helper(t_game *game, void *image, char *filepath)
+static int f_helper(t_game *game, void **image, char *filepath)
 {
 	int dummy1;
 	int dummy2;
 
 	filepath = ft_strjoin("assets/sprites/", filepath);
-	*image = mlx_xpm_file_to_image(game->mlx_ptr, filename, &dummy1, &dumm2);
+	*image = mlx_xpm_file_to_image(game->mlx_ptr, filepath, &dummy1, &dummy2);
 	free(filepath);
 	if (*image == NULL)
 		return (-1);

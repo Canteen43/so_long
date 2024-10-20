@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   f_has_valid_path.c                                 :+:      :+:    :+:   */
+/*   f_handle_key_press.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 13:56:40 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/20 12:26:46 by kweihman         ###   ########.fr       */
+/*   Created: 2024/10/20 10:52:41 by kweihman          #+#    #+#             */
+/*   Updated: 2024/10/20 11:57:49 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "so_long.h"
 
-/*Floodfill algorithm to check if there is a valid path from P to E. That also
-connects all Cs.*/
-bool f_has_valid_path(char **map)
+int f_handle_key_press(int keycode, void *param)
 {
-	int row;
-	int pos;
+	t_game *game;
 
-	f_coords_char_2da(map, 'E', &pos, &row);
-	f_floodfill(map, row, pos);
-	if (f_is_2da_only_giv_chars(map, "0O1SEK") == false)
-		return (false);
-	f_reverse_floodfill // WIP
-	return (true);
+	game = (t_game *)param;
+	if (keycode == XK_Escape)
+		f_quit_game(game);
+	if (keycode == XK_w)
+		f_move_player(game, -1, 0);
+	if (keycode == XK_a)
+		f_move_player(game, 0, -1);
+	if (keycode == XK_s)
+		f_move_player(game, 1, 0);
+	if (keycode == XK_d)
+		f_move_player(game, 0, 1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 15:46:32 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/14 11:10:03 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/20 12:50:47 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,15 @@ void f_print_tile(t_game *game, int row, int col)
 	img_ptr = NULL;
 	if (tile == '1')
 		img_ptr = game->image->wall;
-	else if (tile == '0' || tile == 'O')
-		img_ptr = game->image->background;
-	// Putting background on background is redundant.
 	else if (tile == 'K')
 		img_ptr = game->image->collectible;
 	else if (tile == 'E')
 		img_ptr = game->image->exit_closed;
 	else if (tile == 'G')
 		img_ptr = game->image->exit_open;
-	else if (tile == 'S')
-		img_ptr = game->image->player;
-	// My current system does not allow for the player to be drawn on top of the exit.
 	mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, img_ptr,
+	 SPRITE_WIDTH * col, SPRITE_HEIGHT * row);
+	if (row == game->player_position->row && col == game->player_position->col)
+		mlx_put_image_to_window(game->mlx_ptr, game->win_ptr, game->image->player,
 	 SPRITE_WIDTH * col, SPRITE_HEIGHT * row);
 }

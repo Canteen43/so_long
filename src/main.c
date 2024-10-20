@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:34:08 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/15 18:15:26 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/20 12:34:47 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 void	*mlx_init();
 void	*mlx_new_window(void *mlx_ptr, int size_x, int size_y, char *title);
 int		mlx_loop (void *mlx_ptr);
+int		mlx_hook(t_win_list *win, int x_event, int x_mask, int (*funct)(),
+ void *param);
 
 // WIP, Remove this later
 void	fl_miniprint(char *str, ...);
@@ -34,6 +36,10 @@ int main(int argc, char **argv)
 		fl_miniprint("Error f_is_map_valid\n");
 		return (-1); // Revisit error handling
 	}
+	f_coords_char_2da(game.map, 'S', &(game.player_position->col), 
+	 &(game.player_position->row));
+	game.map[game.player_position->row][game.player_position->col] = '0';
+	game.collectible_count = f_nbr_giv_char_2da(game.map, 'K');
 	game.mlx_ptr = mlx_init();
 	if (game.mlx_ptr == NULL)
 	{
@@ -55,6 +61,7 @@ int main(int argc, char **argv)
 		return (-1); // Revisit error handling
 	}
 	f_print_map(&game);
+	mlx_hook(game.win_ptr, 2, 1L << 0, f_handle_key_press, &game);
     mlx_loop(game.mlx_ptr);
 	// At exit: free split, destroy images, ...
 	return (0);

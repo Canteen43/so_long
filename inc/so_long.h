@@ -6,17 +6,18 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:54:37 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/15 16:33:49 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/20 12:24:02 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include <fcntl.h>      // For open() and O_* constants
-#include <unistd.h>     // For read() and close()
+#include <fcntl.h>		// For open() and O_* constants
+#include <unistd.h>		// For read() and close()
 #include <stdbool.h>	// For true and false
 #include <stdlib.h>		// For size_t
+#include <X11/keysym.h>	// For keycodes
 
 # ifndef SPRITE_HEIGHT
 #  define SPRITE_HEIGHT 32
@@ -28,25 +29,34 @@
 
 struct s_loaded_images
 {
-    void*	collectible;
-    void*	player;
-    void*	background;
-    void*	wall;
-    void*	exit_open;
-    void*	exit_closed;
+	void*	collectible;
+	void*	player;
+	void*	background;
+	void*	wall;
+	void*	exit_open;
+	void*	exit_closed;
+};
+
+struct s_player_position
+{
+	int row;
+	int col;
 };
 
 typedef struct s_game_data
 {
-    char					*map_name;
-    int						map_fd;
-    char					*map_string;
-    char					**map;
-    void					*mlx_ptr;
-    void					*win_ptr;
-    struct s_loaded_images	*image;
-    int						window_width;
-    int						window_height;
+	char						*map_name;
+	int							map_fd;
+	char						*map_string;
+	char						**map;
+	void						*mlx_ptr;
+	void						*win_ptr;
+	struct s_loaded_images		*image;
+	int							window_width;
+	int							window_height;
+	int							move_count;
+	struct s_player_position	*player_position;
+	int							collectible_count;
 }	t_game;
 
 // Function declarations
