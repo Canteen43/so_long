@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:17:38 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/19 10:03:05 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/20 15:52:06 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ static int f_helper(t_game *game, void **image, char *filepath)
 Returns 0 on success and -1 on failure.*/
 int f_load_images(t_game *game)
 {
-	if (f_helper(game, &(game->image->collectible), "collectible.xpm") == -1 ||
-	    f_helper(game, &(game->image->player), "player.xpm") == -1 ||
-	    f_helper(game, &(game->image->background), "background.xpm") == -1 ||
-	    f_helper(game, &(game->image->wall), "wall.xpm") == -1 ||
-	    f_helper(game, &(game->image->exit_open), "exit_open.xpm") == -1 ||
-	    f_helper(game, &(game->image->exit_closed), "exit_closed.xpm") == -1)
+	if (f_helper(game, &(game->image.collectible), "collectible.xpm") == -1 ||
+	    f_helper(game, &(game->image.player), "player.xpm") == -1 ||
+	    f_helper(game, &(game->image.background), "background.xpm") == -1 ||
+	    f_helper(game, &(game->image.wall), "wall.xpm") == -1 ||
+	    f_helper(game, &(game->image.exit_open), "exit_open.xpm") == -1 ||
+	    f_helper(game, &(game->image.exit_closed), "exit_closed.xpm") == -1)
 		return (-1);
 	return (0);
 }

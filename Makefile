@@ -37,19 +37,23 @@ MYLIBS +=	$(LIB_DIR)$(LIB3DIR)$(LIB3)
 # Source files
 SRC_FILES += f_coords_char_2da.c
 SRC_FILES += f_is_2da_only_giv_chars.c
-SRC_FILES += f_is_2da_surrounded.c
-SRC_FILES += f_load_map.c
-SRC_FILES += f_print_map.c
 SRC_FILES += f_floodfill.c
 SRC_FILES += f_is_2da_rctngl.c
 SRC_FILES += f_len_line_2da.c
 SRC_FILES += f_nbr_giv_char_2da.c
 SRC_FILES += f_print_tile.c
+SRC_FILES += f_is_2da_surrounded.c
+SRC_FILES += f_load_map.c
+SRC_FILES += f_open_exit.c
 SRC_FILES += f_has_valid_path.c
 SRC_FILES += f_is_map_valid.c
 SRC_FILES += f_load_images.c
 SRC_FILES += f_nbr_rows_2da.c
 SRC_FILES += main.c
+SRC_FILES += f_handle_key_press.c
+SRC_FILES += f_move_player.c
+SRC_FILES += f_print_map.c
+
 
 # Object files
 OBJ_FILES 		=	$(SRC_FILES:%.c=$(OBJ_DIR)%.o)

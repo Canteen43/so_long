@@ -6,11 +6,11 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 10:52:41 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/20 11:57:49 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/20 13:20:27 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../inc/so_long.h"
 
 int f_handle_key_press(int keycode, void *param)
 {
@@ -18,7 +18,7 @@ int f_handle_key_press(int keycode, void *param)
 
 	game = (t_game *)param;
 	if (keycode == XK_Escape)
-		f_quit_game(game);
+		return (-1) ; // WIP: actually f_quit_game(game);
 	if (keycode == XK_w)
 		f_move_player(game, -1, 0);
 	if (keycode == XK_a)

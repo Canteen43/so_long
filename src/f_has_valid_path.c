@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:56:40 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/20 12:26:46 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/20 18:54:42 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ connects all Cs.*/
 bool f_has_valid_path(char **map)
 {
 	int row;
-	int pos;
+	int col;
 
-	f_coords_char_2da(map, 'E', &pos, &row);
-	f_floodfill(map, row, pos);
+	f_coords_char_2da(map, 'E', &row, &col);
+	f_floodfill(map, row, col);
 	if (f_is_2da_only_giv_chars(map, "0O1SEK") == false)
 		return (false);
-	f_reverse_floodfill // WIP
 	return (true);
 }
