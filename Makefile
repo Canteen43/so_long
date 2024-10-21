@@ -56,6 +56,8 @@ SRC_FILES += f_print_map.c
 SRC_FILES += f_exit_game.c
 SRC_FILES += f_free_images.c
 SRC_FILES += f_handle_close_button.c
+SRC_FILES += f_game_init.c
+SRC_FILES += f_set_player_pos_and_col_count.c
 
 
 

@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   f_handle_close_button.c                            :+:      :+:    :+:   */
+/*   f_set_player_pos_and_col_count.c                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 08:24:31 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/21 09:25:16 by kweihman         ###   ########.fr       */
+/*   Created: 2024/10/21 09:46:47 by kweihman          #+#    #+#             */
+/*   Updated: 2024/10/21 09:50:01 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-/*Handles the close button of the window. Exits the game.*/
-int	f_handle_close_button(void *param)
+/* Set player position and collectible count */
+void	f_set_player_pos_and_col_count(t_game *game)
 {
-	t_game	*game;
-
-	game = (t_game *)param;
-	f_exit_game(game, "Game ended with close button.", 0);
-	return (0);
+	f_coords_char_2da(game->map, 'S', &(game->player_position.row),
+		&(game->player_position.col));
+	game->map[game->player_position.row][game->player_position.col] = '0';
+	game->collectible_count = f_nbr_giv_char_2da(game->map, 'K');
 }

@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 08:00:06 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/21 09:20:20 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/21 09:29:28 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ void	fl_miniprint(char *str, ...);
 // From Minilibx
 int		mlx_destroy_window(void *mlx_ptr, void *win_ptr);
 
-void	f_exit_game(t_game *game)
+void	f_exit_game(t_game *game, char *message, int status)
 {
+	fl_miniprint("%s\n", message);
 	if (game->win_ptr)
 		mlx_destroy_window(game->mlx_ptr, game->win_ptr);
 	f_free_images(game);
 	if (game->map)
 		fl_free_split(game->map);
 	fl_miniprint("Exited and freed properly.\n");
-	exit(0);
+	exit(status);
 }

@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:29:44 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/21 09:11:45 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/21 09:39:02 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	f_load_map(t_game *game, int argc, char **argv)
 
 	if (argc > 2)
 	{
-		fl_miniprint("Error: Too many arguments\n");
+		fl_miniprint("Too many arguments\n");
 		return (-1);
 	}
 	if (argc == 2)

@@ -6,15 +6,17 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 15:46:32 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/21 09:10:16 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/21 09:54:25 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
+#include "../lib/minilibx-linux/mlx.h"
 
-// From Minilibx
-int		mlx_put_image_to_window(void *mlx_ptr, void *win_ptr, void *img_ptr,
-			int x, int y);
+// I cannot prototype the following functions because stupid norminette throws
+// an error for too many args. So I had to include the header file.
+// int		mlx_put_image_to_window(void *mlx_ptr, void *win_ptr, void *img_ptr,
+// 			int x, int y);
 
 // From Libft
 char	*ft_strchr(const char *s, int c);

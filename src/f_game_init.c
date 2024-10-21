@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   f_handle_close_button.c                            :+:      :+:    :+:   */
+/*   f_game_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 08:24:31 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/21 09:25:16 by kweihman         ###   ########.fr       */
+/*   Created: 2024/10/21 09:40:06 by kweihman          #+#    #+#             */
+/*   Updated: 2024/10/21 09:50:08 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-/*Handles the close button of the window. Exits the game.*/
-int	f_handle_close_button(void *param)
+/* Initialize important game variables to NULL or 0 */
+void	f_game_init(t_game *game)
 {
-	t_game	*game;
-
-	game = (t_game *)param;
-	f_exit_game(game, "Game ended with close button.", 0);
-	return (0);
+	game->map = NULL;
+	game->mlx_ptr = NULL;
+	game->win_ptr = NULL;
+	game->image.collectible = NULL;
+	game->image.exit_open = NULL;
+	game->image.exit_closed = NULL;
+	game->image.floor = NULL;
+	game->image.player = NULL;
+	game->image.wall = NULL;
+	game->move_count = 0;
 }

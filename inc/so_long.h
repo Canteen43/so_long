@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:54:37 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/21 08:58:30 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/21 09:26:42 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	f_print_map(t_game *game);
 void	f_print_tile(t_game *game, int row, int col);
 void	f_move_player(t_game *game, int row_diff, int col_diff);
 void	f_open_exit(t_game *game);
-void	f_exit_game(t_game *game);
+void	f_exit_game(t_game *game, char *message, int status);
 void	f_free_images(t_game *game);
 
 #endif // SO_LONG_H
