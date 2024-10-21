@@ -6,18 +6,18 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:54:37 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/21 08:28:48 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/21 08:58:30 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include <fcntl.h>		// For open() and O_* constants
-#include <unistd.h>		// For read() and close()
-#include <stdbool.h>	// For true and	false
-#include <stdlib.h>		// For size_t
-#include <X11/keysym.h>	// For keycodes
+# include <fcntl.h>		// For open() and O_* constants
+# include <unistd.h>		// For read() and close()
+# include <stdbool.h>	// For true and	false
+# include <stdlib.h>		// For size_t
+# include <X11/keysym.h>	// For keycodes
 
 # ifndef SPRITE_HEIGHT
 #  define SPRITE_HEIGHT 32
@@ -29,18 +29,18 @@
 
 struct s_loaded_images
 {
-	void*	collectible;
-	void*	player;
-	void*	background;
-	void*	wall;
-	void*	exit_open;
-	void*	exit_closed;
+	void	*collectible;
+	void	*player;
+	void	*background;
+	void	*wall;
+	void	*exit_open;
+	void	*exit_closed;
 };
 
 struct s_player_position
 {
-	int row;
-	int col;
+	int	row;
+	int	col;
 };
 
 typedef struct s_game_data

@@ -6,16 +6,16 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:48:19 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/14 10:22:14 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/21 08:48:36 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
 /*Returns the length of the first line in a 2D array.*/
-int f_len_line_2da(char **tda)
+int	f_len_line_2da(char **tda)
 {
-	int line_length;
+	int	line_length;
 
 	line_length = 0;
 	if (tda == NULL)

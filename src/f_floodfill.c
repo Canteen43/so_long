@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 14:26:41 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/18 18:45:25 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/21 08:46:26 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *s, int c);
 position (in my program exit). Then it edits the field and also calls itself
 for all adjacent fields. It stops when it encounter fields that don't need work.
 */
-void f_floodfill(char **map, int row, int pos)
+void	f_floodfill(char **map, int row, int pos)
 {
 	if (ft_strchr("O1SK", map[row][pos]))
 		return ;

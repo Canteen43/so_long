@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:56:40 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/20 18:54:42 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/21 08:47:03 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 /*Floodfill algorithm to check if there is a valid path from P to E. That also
 connects all Cs.*/
-bool f_has_valid_path(char **map)
+bool	f_has_valid_path(char **map)
 {
-	int row;
-	int col;
+	int	row;
+	int	col;
 
 	f_coords_char_2da(map, 'E', &row, &col);
 	f_floodfill(map, row, col);

@@ -6,16 +6,16 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 22:41:31 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/14 10:21:49 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/21 08:51:48 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-void f_print_map(t_game *game)
+void	f_print_map(t_game *game)
 {
-	int row;
-	int col;
+	int	row;
+	int	col;
 
 	row = 0;
 	while (game->map[row])

@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 23:07:55 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/17 08:14:54 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/21 08:51:22 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 /*Returns the occurences of the given char c in all the strings of the given
 2D-array of chars.*/
-int f_nbr_giv_char_2da(char **tda, char c)
+int	f_nbr_giv_char_2da(char **tda, char c)
 {
-	int count;
-	int row;
-	int col;
+	int	count;
+	int	row;
+	int	col;
 
 	if (tda == NULL)
 		return (0);
