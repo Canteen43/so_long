@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:54:37 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/20 15:51:25 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/21 08:28:48 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,22 +60,25 @@ typedef struct s_game_data
 }	t_game;
 
 // Function declarations
-void	f_coords_char_2da(char **tda, char c, int *pos, int *row);
-void	f_floodfill(char **map, int row, int pos);
-bool	f_has_valid_path(char **map);
-bool	f_is_2da_only_giv_chars(char **array, char *valid_chars);
-bool	f_is_2da_rctngl(char **array);
-bool	f_is_map_valid(char **map);
-bool	f_is_2da_surrounded(char **tda, char c);
 int		f_len_line_2da(char **array);
 int		f_load_images(t_game *game);
 int		f_load_map(t_game *game, int argc, char **argv);
 int		f_nbr_giv_char_2da(char **array, char c);
 int		f_nbr_rows_2da(char **array);
+int		f_handle_key_press(int keycode, void *param);
+int		f_handle_close_button(void *param);
+bool	f_has_valid_path(char **map);
+bool	f_is_2da_only_giv_chars(char **array, char *valid_chars);
+bool	f_is_2da_rctngl(char **array);
+bool	f_is_map_valid(char **map);
+bool	f_is_2da_surrounded(char **tda, char c);
+void	f_coords_char_2da(char **tda, char c, int *pos, int *row);
+void	f_floodfill(char **map, int row, int pos);
 void	f_print_map(t_game *game);
 void	f_print_tile(t_game *game, int row, int col);
-int		f_handle_key_press(int keycode, void *param);
 void	f_move_player(t_game *game, int row_diff, int col_diff);
 void	f_open_exit(t_game *game);
+void	f_exit_game(t_game *game);
+void	f_free_images(t_game *game);
 
 #endif // SO_LONG_H

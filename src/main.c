@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:34:08 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/20 19:09:49 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/21 08:26:59 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int main(int argc, char **argv)
 	game.move_count = 0;
 	f_print_map(&game);
 	mlx_hook(game.win_ptr, 2, 1L << 0, f_handle_key_press, &game);
+	mlx_hook(game.win_ptr, 17, 0, f_handle_close_button, &game);
     mlx_loop(game.mlx_ptr);
-	// At exit: free split, destroy images, ...
 	return (0);
 }

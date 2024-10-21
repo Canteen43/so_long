@@ -53,6 +53,10 @@ SRC_FILES += main.c
 SRC_FILES += f_handle_key_press.c
 SRC_FILES += f_move_player.c
 SRC_FILES += f_print_map.c
+SRC_FILES += f_exit_game.c
+SRC_FILES += f_free_images.c
+SRC_FILES += f_handle_close_button.c
+
 
 
 # Object files

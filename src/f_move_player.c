@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 11:14:00 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/20 19:08:10 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/21 08:25:56 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ void	f_move_player(t_game *game, int row_diff, int col_diff)
 	game->move_count++;
 	fl_miniprint("Move count: %d\n", game->move_count);
 	if (game->map[game->player_position.row][game->player_position.col] == 'G')
-		return ; // WIP: Win Game
+	{
+		fl_miniprint("You're a winner!\n");
+		f_exit_game(game);
+	}
 }
-
-// WIP: 

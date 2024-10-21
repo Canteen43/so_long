@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   f_handle_key_press.c                               :+:      :+:    :+:   */
+/*   f_exit_game.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/20 10:52:41 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/21 08:08:39 by kweihman         ###   ########.fr       */
+/*   Created: 2024/10/21 08:00:06 by kweihman          #+#    #+#             */
+/*   Updated: 2024/10/21 08:31:05 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-int f_handle_key_press(int keycode, void *param)
-{
-	t_game *game;
+// From FLib
+void	fl_free_split(char **ptr);
+void	fl_miniprint(char *str, ...);
 
-	game = (t_game *)param;
-	if (keycode == XK_Escape)
-		f_exit_game(game);
-	if (keycode == XK_w)
-		f_move_player(game, -1, 0);
-	if (keycode == XK_a)
-		f_move_player(game, 0, -1);
-	if (keycode == XK_s)
-		f_move_player(game, 1, 0);
-	if (keycode == XK_d)
-		f_move_player(game, 0, 1);
-	return (0);
+// From Minilibx
+int	mlx_destroy_window(void *mlx_ptr, void *win_ptr);
+
+void	f_exit_game(t_game *game)
+{
+	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
+	f_free_images(game);
+	fl_free_split(game->map);
+	fl_miniprint("Exited gracefully.\n");
+	exit(0);
 }
