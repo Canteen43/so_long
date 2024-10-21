@@ -6,7 +6,7 @@
 /*   By: kweihman <kweihman@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 09:40:06 by kweihman          #+#    #+#             */
-/*   Updated: 2024/10/21 09:50:08 by kweihman         ###   ########.fr       */
+/*   Updated: 2024/10/21 09:57:16 by kweihman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	f_game_init(t_game *game)
 	game->image.collectible = NULL;
 	game->image.exit_open = NULL;
 	game->image.exit_closed = NULL;
-	game->image.floor = NULL;
+	game->image.background = NULL;
 	game->image.player = NULL;
 	game->image.wall = NULL;
 	game->move_count = 0;
